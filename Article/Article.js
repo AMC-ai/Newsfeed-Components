@@ -137,7 +137,7 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   articleDate.classList.add('date')
   articleButton.classList.add('expandButton')
 
-  const span = '/u1F859';
+  const span = '\u25bc';
   //set text content
   articleTitle.textContent = title
   articleDate.textContent = date
@@ -147,11 +147,11 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   articleButton.textContent = span
 
   //event listener article toggle
-  article.addEventListener('click', e => {
+  articleButton.addEventListener('click', e => {
     console.log('button clicked', e.target)
     //1. change visibility of the content w/ 'toggle-on' article-open
-    articleButton.classList.toggle('expandButton')
-    article - open.classList.toggle(toggle - on)
+    article.classList.toggle('article-open')
+    // article - open.classList.toggle('toggle-on')
   })
 
   return article
