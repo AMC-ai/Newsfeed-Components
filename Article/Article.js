@@ -99,7 +99,7 @@ const data = [
     <span class='expandButton'></span>
   </div>
 
-  Hint: You will need to use createElement more than once here!
+    Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
@@ -112,3 +112,47 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+const newArticle = document.querySelector('.articles')
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  //define elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articlePara1 = document.createElement('p');
+  const articlePara2 = document.createElement('p');
+  const articlePara3 = document.createElement('p');
+  const articleButton = document.createElement('span');
+
+  //setup strutuce of elements
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
+  article.appendChild(articlePara1)
+  article.appendChild(articlePara2)
+  article.appendChild(articlePara3)
+  article.appendChild(articleButton)
+
+  //set class names
+  article.classList.add('article')
+  articleDate.classList.add('date')
+  articleButton.classList.add('expandButton')
+
+  const span = '/u1F859';
+  //set text content
+  articleTitle.textContent = title
+  articleDate.textContent = date
+  articlePara1.textContent = firstParagraph
+  articlePara2.textContent = secondParagraph
+  articlePara3.textContent = thirdParagraph
+  articleButton.textContent = span
+
+  //event listener article toggle
+  article.addEventListener('click', e => {
+    console.log('button clicked', e.target)
+    //1. change visibility of the content w/ 'toggle-on' article-open
+    articleButton.classList.toggle('expandButton')
+    article - open.classList.toggle(toggle - on)
+  })
+
+  return article
+}
