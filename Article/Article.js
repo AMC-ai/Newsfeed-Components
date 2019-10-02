@@ -112,7 +112,7 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-const newArticle = document.querySelector('.articles')
+const articles = document.querySelector('.articles')
 
 function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
   //define elements
@@ -156,3 +156,7 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
 
   return article
 }
+
+data.map(info => {
+  articles.appendChild(createArticle(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph))
+})
