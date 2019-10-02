@@ -11,7 +11,7 @@ let menuItems = [
 
 /* 
 
-  Step 1: Write a function that will create a menu component as seen below:
+Step 1: Write a function that will create a menu component as seen below:
 
   <div class="menu">
     <ul>
@@ -33,3 +33,37 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+const hamMenu = document.querySelector('.header')
+function createMenu(arr) {
+  //define new elements
+  const menuImg = document.querySelector('.menu-button')
+  const menu = document.createElement('div');
+  const menuUl = document.createElement('ul');
+  arr.forEach(elem => {
+    const menuLi = document.createElement('li');
+    menuUl.appendChild(menuLi);
+    //set text content 
+    menuLi.textContent = elem;
+  })
+  // set up structure of elements
+  menu.appendChild(menuUl);
+  // menu.appendChild(menuImg)
+
+  //set up class names
+  menu.classList.add('menu')
+  // menuImg.classList.add('menu-button')
+
+  //set text content
+  // menuImg.scr = "./assets/menu.png";
+
+  //event listener
+  menuImg.addEventListener('click', (e) => {
+    console.log('button click', e.target)
+    menu.classList.toggle('menu--open');
+
+  });
+
+  return menu
+}
+
+hamMenu.appendChild(createMenu(menuItems));
