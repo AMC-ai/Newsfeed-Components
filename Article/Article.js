@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "April's Stuff",
+    date: 'oct 2nd, 2019',
+    firstParagraph: `Liquorice wafer jelly-o marshmallow. Marzipan muffin cake candy marshmallow jelly-o. Gingerbread oat cake marshmallow gummies chocolate cake. Gummi bears lemon drops brownie. Chocolate oat cake cookie gummi bears candy canes cookie sugar plum. Soufflé carrot cake biscuit. Candy sesame snaps halvah icing. Candy caramels liquorice brownie liquorice. Cake gummi bears gummi bears. Carrot cake lollipop sugar plum. Ice cream danish gingerbread gummi bears pastry halvah. Lemon drops chupa chups carrot cake.`,
+
+    secondParagraph: `Caramels pie wafer sesame snaps apple pie jelly-o marshmallow tiramisu carrot cake. Oat cake candy canes gingerbread tootsie roll pudding carrot cake jelly beans cake. Sugar plum sesame snaps jelly beans bear claw pudding cotton candy. Marzipan sugar plum apple pie toffee jujubes topping topping. Pie dragée candy gummi bears marshmallow. Candy canes marzipan cupcake chocolate bar. Pie lollipop danish croissant wafer tart lemon drops cheesecake. Muffin chocolate bar tootsie roll sweet roll pastry gingerbread carrot cake macaroon cookie. Jelly chocolate bar gingerbread cake soufflé candy carrot cake cupcake gummies. Chocolate bar carrot cake gummi bears danish gummi bears biscuit sugar plum. Chocolate bar jelly-o lollipop cookie jelly-o carrot cake chocolate cake cheesecake. Tiramisu tiramisu jelly apple pie. Sesame snaps cake sugar plum. `,
+
+    thirdParagraph: `Apple pie chocolate cake powder fruitcake powder gingerbread brownie croissant. Pudding caramels bonbon ice cream marzipan wafer lemon drops cake. Marshmallow pudding jelly lollipop pie. Bonbon donut cookie topping chocolate biscuit jelly-o cotton candy. Wafer oat cake cookie icing jelly cookie donut sweet wafer. Liquorice tootsie roll chocolate bar cotton candy. Halvah biscuit sugar plum. Chupa chups sweet fruitcake carrot cake cupcake toffee marshmallow jelly beans. Cake cookie tootsie roll. Chocolate cake pudding donut soufflé chocolate oat cake lollipop chupa chups pie. Cake croissant chocolate cake chocolate. Sweet roll biscuit brownie toffee marzipan donut.`
   }
 ];
 
@@ -151,7 +160,6 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
     console.log('button clicked', e.target)
     //1. change visibility of the content w/ 'toggle-on' article-open
     article.classList.toggle('article-open')
-    // article - open.classList.toggle('toggle-on')
   })
 
   return article
