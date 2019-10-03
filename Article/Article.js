@@ -168,7 +168,7 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
     // } else {
     //   articleButton.innerHTML = open;
     // }
-
+//stretch goal
     articleButton.innerHTML = close === open ? '\u25b2' : open;
 
 
