@@ -133,6 +133,7 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   const articlePara3 = document.createElement('p');
   const articleButton = document.createElement('span');
 
+
   //setup strutuce of elements
   article.appendChild(articleTitle)
   article.appendChild(articleDate)
@@ -141,23 +142,36 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   article.appendChild(articlePara3)
   article.appendChild(articleButton)
 
+
   //set class names
   article.classList.add('article')
   articleDate.classList.add('date')
   articleButton.classList.add('expandButton')
 
-  const span = '\u25bc';
+  const open = '\u25bc';
   //set text content
   articleTitle.textContent = title
   articleDate.textContent = date
   articlePara1.textContent = firstParagraph
   articlePara2.textContent = secondParagraph
   articlePara3.textContent = thirdParagraph
-  articleButton.textContent = span
+  articleButton.textContent = open
+
 
   //event listener article toggle
   articleButton.addEventListener('click', e => {
     console.log('button clicked', e.target)
+    const close = articleButton.innerHTML
+    console.log(close)
+    // if (close === open) {
+    //   articleButton.innerHTML = '\u25b2';
+    // } else {
+    //   articleButton.innerHTML = open;
+    // }
+
+    articleButton.innerHTML = close === open ? '\u25b2' : open;
+
+
     //1. change visibility of the content w/ 'toggle-on' article-open
     article.classList.toggle('article-open')
   })

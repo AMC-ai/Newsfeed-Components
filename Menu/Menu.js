@@ -47,14 +47,9 @@ function createMenu(arr) {
   })
   // set up structure of elements
   menu.appendChild(menuUl);
-  // menu.appendChild(menuImg)
 
   //set up class names
   menu.classList.add('menu')
-  // menuImg.classList.add('menu-button')
-
-  //set text content
-  // menuImg.scr = "./assets/menu.png";
 
   //event listener
   menuImg.addEventListener('click', (e) => {
