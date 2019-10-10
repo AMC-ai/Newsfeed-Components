@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "April's Stuff",
+    date: 'Oct 2nd, 2019',
+    firstParagraph: `Liquorice wafer jelly-o marshmallow. Marzipan muffin cake candy marshmallow jelly-o. Gingerbread oat cake marshmallow gummies chocolate cake. Gummi bears lemon drops brownie. Chocolate oat cake cookie gummi bears candy canes cookie sugar plum. Soufflé carrot cake biscuit. Candy sesame snaps halvah icing. Candy caramels liquorice brownie liquorice. Cake gummi bears gummi bears. Carrot cake lollipop sugar plum. Ice cream danish gingerbread gummi bears pastry halvah. Lemon drops chupa chups carrot cake.`,
+
+    secondParagraph: `Caramels pie wafer sesame snaps apple pie jelly-o marshmallow tiramisu carrot cake. Oat cake candy canes gingerbread tootsie roll pudding carrot cake jelly beans cake. Sugar plum sesame snaps jelly beans bear claw pudding cotton candy. Marzipan sugar plum apple pie toffee jujubes topping topping. Pie dragée candy gummi bears marshmallow. Candy canes marzipan cupcake chocolate bar. Pie lollipop danish croissant wafer tart lemon drops cheesecake. Muffin chocolate bar tootsie roll sweet roll pastry gingerbread carrot cake macaroon cookie. Jelly chocolate bar gingerbread cake soufflé candy carrot cake cupcake gummies. Chocolate bar carrot cake gummi bears danish gummi bears biscuit sugar plum. Chocolate bar jelly-o lollipop cookie jelly-o carrot cake chocolate cake cheesecake. Tiramisu tiramisu jelly apple pie. Sesame snaps cake sugar plum. `,
+
+    thirdParagraph: `Apple pie chocolate cake powder fruitcake powder gingerbread brownie croissant. Pudding caramels bonbon ice cream marzipan wafer lemon drops cake. Marshmallow pudding jelly lollipop pie. Bonbon donut cookie topping chocolate biscuit jelly-o cotton candy. Wafer oat cake cookie icing jelly cookie donut sweet wafer. Liquorice tootsie roll chocolate bar cotton candy. Halvah biscuit sugar plum. Chupa chups sweet fruitcake carrot cake cupcake toffee marshmallow jelly beans. Cake cookie tootsie roll. Chocolate cake pudding donut soufflé chocolate oat cake lollipop chupa chups pie. Cake croissant chocolate cake chocolate. Sweet roll biscuit brownie toffee marzipan donut.`
   }
 ];
 
@@ -99,7 +108,7 @@ const data = [
     <span class='expandButton'></span>
   </div>
 
-  Hint: You will need to use createElement more than once here!
+    Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
@@ -112,3 +121,64 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+const articles = document.querySelector('.articles')
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  //define elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articlePara1 = document.createElement('p');
+  const articlePara2 = document.createElement('p');
+  const articlePara3 = document.createElement('p');
+  const articleButton = document.createElement('span');
+
+
+  //setup strutuce of elements
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
+  article.appendChild(articlePara1)
+  article.appendChild(articlePara2)
+  article.appendChild(articlePara3)
+  article.appendChild(articleButton)
+
+
+  //set class names
+  article.classList.add('article')
+  articleDate.classList.add('date')
+  articleButton.classList.add('expandButton')
+
+  const open = '\u25bc';
+  //set text content
+  articleTitle.textContent = title
+  articleDate.textContent = date
+  articlePara1.textContent = firstParagraph
+  articlePara2.textContent = secondParagraph
+  articlePara3.textContent = thirdParagraph
+  articleButton.textContent = open
+
+
+  //event listener article toggle
+  articleButton.addEventListener('click', e => {
+    console.log('button clicked', e.target)
+    const close = articleButton.innerHTML
+    console.log(close)
+    // if (close === open) {
+    //   articleButton.innerHTML = '\u25b2';
+    // } else {
+    //   articleButton.innerHTML = open;
+    // }
+//stretch goal
+    articleButton.innerHTML = close === open ? '\u25b2' : open;
+
+
+    //1. change visibility of the content w/ 'toggle-on' article-open
+    article.classList.toggle('article-open')
+  })
+
+  return article
+}
+
+data.map(info => {
+  articles.appendChild(createArticle(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph))
+})
